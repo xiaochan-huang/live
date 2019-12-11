@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日常开支记录系统</title>
+    <link rel="stylesheet" href="/static/css/life.css">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/life.js' %}"></script>
+</head>
+<body>
+
+<div class="box">
+    <div class="title">
+        日常开支记录系统
+    </div>
+    <div class="content">
+        <ul class="list">
+            <li>
+                <button class="checkLife active">查询记录</button>
+            </li>
+            <li>
+                <button class="addLife">增加记录</button>
+            </li>
+            <li>
+                <button class="delLife">删除记录</button>
+            </li>
+            <li>
+                <button class="updateLife">更改记录</button>
+            </li>
+        </ul>
+        <div class="right">
+{#        查询table#}
+            <table class="lifelist">
+                <tr class="sheetTitle">
+                    <th>编号</th>
+                    <th>日期</th>
+                    <th>消费事项</th>
+                    <th>消费金额</th>
+                    <th>月度总计消费</th>
+                    <th>操作</th>
+                </tr>
+                    {% for life in lifelist %}
+                    <tr>
+                        <td><input type="text" value="{{life.id}}"></td>
+                        <td><input type="text" value="{{life.date}}"></td>
+                        <td><input type="text" value="{{life.consumption_matters}}"></td>
+                        <td><input type="text" value="{{life.amount}}"></td>
+                        <td><input type="text" value="{{life.total}}"></td>
+                        <td><span></span></td>
+                    </tr>
+                    {% endfor %}
+            </table>
+{#        增加table#}
+            <table class="lifeadd">
+                <tr class="sheetTitle">
+                    <th>编号</th>
+                    <th>日期</th>
+                    <th>消费事项</th>
+                    <th>消费金额</th>
+                    <th>月度总计消费</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td><input type="text" value="" name="" disabled></td>
+                    <td><input type="text" value="{{life.date}}" name="date"></td>
+                    <td><input type="text" value="{{life.consumption_matters}}" name="consumption_matters"></td>
+                    <td><input type="text" value="{{life.amount}}" name="amount"></td>
+                    <td><input type="text" value="{{life.total}}" name="total"></td>
+                    <td><span onclick="addLife(this)">增加</span></td>
+                </tr>
+            </table>
+            <table class="lifedel">
+                <tr class="sheetTitle">
+                    <th>编号</th>
+                    <th>日期</th>
+                    <th>消费事项</th>
+                    <th>消费金额</th>
+                    <th>月度总计消费</th>
+                    <th>操作</th>
+                </tr>
+                {% for life in lifelist %}
+                <tr>
+                    <td><input type="text" value="{{life.id}}" name="id"></td>
+                    <td><input type="text" value="{{life.date}}" name=""></td>
+                    <td><input type="text" value="{{life.consumption_matters}}" name=""></td>
+                    <td><input type="text" value="{{life.amount}}" name=""></td>
+                    <td><input type="text" value="{{life.total}}" name=""></td>
+                    <td><span onclick="delLife(this)">删除</span></td>
+                    </tr>
+                {% endfor %}
+
+
+            </table>
+            <table class="lifeupdate">
+                <tr class="sheetTitle">
+                    <th>编号</th>
+                    <th>日期</th>
+                    <th>消费事项</th>
+                    <th>消费金额</th>
+                    <th>月度总计消费</th>
+                    <th>操作</th>
+                </tr>
+
+                {% for life in lifelist %}
+                <tr>
+                    <td><input type="text" value="{{life.id}}" name="id"></td>
+                    <td><input type="text" value="{{life.date}}" name="date"></td>
+                    <td><input type="text" value="{{life.consumption_matters}}" name="consumption_matters"></td>
+                    <td><input type="text" value="{{life.amount}}" name="amount"></td>
+                    <td><input type="text" value="{{life.total}}" name="total"></td>
+                        <td><span onclick="putLife(this)">修改</span></td>
+                    </tr>
+                {% endfor %}
+
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

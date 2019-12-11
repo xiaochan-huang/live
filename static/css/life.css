@@ -1,0 +1,75 @@
+*{
+    background-color: skyblue;
+}
+.box {
+    margin: 0 auto;
+    width: 95%;
+}
+
+.title {
+    height: 130px;
+    line-height: 130px;
+    text-align: center;
+    font-size: 50px;
+    /*background: url('../images/timg.jpeg') no-repeat;*/
+
+}
+
+li{
+     list-style: none;
+}
+.list {
+    float: left;
+    padding: 0;
+}
+.list button {
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #464b57;
+    width: 127px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.active{
+    /*background-image: linear-gradient(to bottom , #cccccc, #ffffff);*/
+    background-image: linear-gradient(to bottom , pink, lightskyblue);
+    color: black !important;
+}
+.right {
+    float: left;
+    margin-left: 30px;
+}
+.right table{
+    border: solid 2px #B4B4B4;
+    border-collapse: collapse;
+}
+.right table tr th{
+    height:27px;
+    border: solid 2px #B4B4B4;
+}
+.right table  tr td{
+    height:25px;
+    border: solid 2px #B4B4B4;
+}
+.right input{
+    border: none;
+    text-align: center;
+}
+.lifeadd {
+    display: none;
+}
+
+.lifedel {
+    display: none;
+}
+
+.lifeupdate {
+    display: none;
+}
+
+span{
+    text-align: center;
+    display: inline-block;
+    width: 50px;
+}

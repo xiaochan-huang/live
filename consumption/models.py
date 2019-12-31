@@ -17,8 +17,8 @@ class LifeManage(models.Manager):
 class LifeInfo(models.Model):
     date = models.DateField(verbose_name='日期')
     consumption_matters = models.CharField(verbose_name='消费事项', max_length=20)
-    amount = models.IntegerField(verbose_name='消费金额')
-    total = models.IntegerField(verbose_name='总计消费')
+    amount = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='消费金额')
+    total = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='总计消费')
 
     # objects = LifeManage()
 
